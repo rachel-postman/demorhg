@@ -9,7 +9,6 @@ id = a1c8e5ae-c3aa-444f-932c-5668c986b25b
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"44602450-eb7caf66-c01e-4a77-8ac0-58094c508b7d","path":"Cat facts Rachel.json","metaData":{"generateCollectionPreferences":"{\"requestNameSource\":\"Fallback\",\"indentCharacter\":\"Space\",\"parametersResolution\":\"Example\",\"folderStrategy\":\"Paths\",\"includeAuthInfoInExample\":true,\"enableOptionalParameters\":true,\"keepImplicitHeaders\":false,\"includeDeprecated\":true,\"alwaysInheritAuthentication\":false,\"updateCollectionSync\":true,\"requestParametersResolution\":\"Example\",\"exampleParametersResolution\":\"Example\"}"}}
 
 [config.relations.collections.metaData]
 
