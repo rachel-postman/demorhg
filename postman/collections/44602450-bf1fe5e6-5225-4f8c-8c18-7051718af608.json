@@ -1,0 +1,1175 @@
+{
+	"info": {
+		"_postman_id": "44602450-bf1fe5e6-5225-4f8c-8c18-7051718af608",
+		"name": "Collection Ready - add tests",
+		"description": "For generating customers, bank accounts, and their wallet inventory for test scenarios.\n\n## header\n\n<img src=\"https://content.pstmn.io/7668a9a2-4e9c-45eb-8c68-1ae7de1c9546/ZGlhZ3JhbS5qcGc=\">",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "Create a new customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "0aaf3854-5a05-44e7-b811-b8a2c40d624c",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "e68a024c-dbc8-4238-abf1-b56ef653cb25",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44602450-959747b6-9abf-4c68-bc93-d2715c4c1d11",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-mock-response-name",
+								"value": "Customer created",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "# Create Customer API\n\nThis endpoint allows you to create a new customer in the system. It accepts a POST request with customer details in the request body.\n\n## Purpose\n\nThe purpose of this API is to register a new customer by providing their name and email address.\n\n## Request\n\n### URL\n\n`{{baseUrl}}/customers`\n\n### Method\n\n`POST`\n\n### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **name** (string): The full name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n#### Example Request\n\n``` json\n{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Expected Responses\n\nUpon successful creation of a customer, the API will return a JSON object containing the following fields:\n\n- **customerId** (string): A unique identifier for the newly created customer.\n    \n- **name** (string): The name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n### Example Response\n\n``` json\n{\n  \"customerId\": \"12345\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Important Notes and Best Practices\n\n- Ensure that the email provided is valid and unique to avoid conflicts.\n    \n- Always validate the input data before sending the request to minimize errors.\n    \n- Handle responses appropriately, especially error responses, to inform users of any issues with their request.\n    \n- Utilize Postman's features such as environments and collections to streamline your API testing process.\n    \n\nThis endpoint allows you to create a new customer in the system. It accepts a POST request with customer details in the request body.\n\n## Purpose\n\nThe purpose of this API is to register a new customer by providing their name and email address.\n\n## How to Use\n\n1. **Endpoint**: Send a POST request to `{{baseUrl}}/customers`.\n    \n2. **Headers**: Ensure that the `Content-Type` header is set to `application/json`.\n    \n3. **Request Body**: Include the customer details in the request body in JSON format.\n    \n\n## Request\n\n### URL\n\n`{{baseUrl}}/customers`\n\n### Method\n\n`POST`\n\n### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **name** (string): The full name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n#### Example Request\n\n``` json\n{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Expected Responses\n\nUpon successful creation of a customer, the API will return a JSON object containing the following fields:\n\n- **customerId** (string): A unique identifier for the newly created customer.\n    \n- **name** (string): The name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n### Example Response\n\n``` json\n{\n  \"customerId\": \"12345\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Important Notes and Best Practices\n\n- Ensure that the email provided is valid and unique to avoid conflicts.\n    \n- Always validate the input data before sending the request to minimize errors.\n    \n- Handle responses appropriately, especially error responses, to inform users of any issues with their request.\n    \n\nThis endpoint allows you to create a new customer in the system. It accepts a POST request with customer details in the request body.\n\n## Request\n\n### URL\n\n`{{baseUrl}}/customers`\n\n### Method\n\n`POST`\n\n### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **name** (string): The full name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n#### Example Request\n\n``` json\n{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Response\n\nUpon successful creation of a customer, the API will return a JSON object containing the following fields:\n\n- **customerId** (string): A unique identifier for the newly created customer.\n    \n- **name** (string): The name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n### Example Response\n\n``` json\n{\n  \"customerId\": \"12345\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\nThis endpoint allows you to create a new customer in the system. It accepts a POST request with customer details in the request body.\n\n## Request\n\n### URL\n\n`{{baseUrl}}/customers`\n\n### Method\n\n`POST`\n\n### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **name** (string): The full name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n#### Example Request\n\n``` json\n{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Response\n\nUpon successful creation of a customer, the API will return a JSON object containing the following fields:\n\n- **customerId** (string): A unique identifier for the newly created customer.\n    \n- **name** (string): The name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n### Example Response\n\n``` json\n{\n  \"customerId\": \"12345\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Request\n\n### URL\n\n`{{baseUrl}}/customers`\n\n### Method\n\n`POST`\n\n### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- **name** (string): The full name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n#### Example Request\n\n``` json\n{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```\n\n## Response\n\nUpon successful creation of a customer, the API will return a JSON object containing the following fields:\n\n- **customerId** (string): A unique identifier for the newly created customer.\n    \n- **name** (string): The name of the customer.\n    \n- **email** (string): The email address of the customer.\n    \n\n### Example Response\n\n``` json\n{\n  \"customerId\": \"12345\",\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"id": "44602450-ed173e98-c8f0-473c-acac-7f106d8983dd",
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Customer created",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 07 Jul 2025 21:46:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=b421f09ebed003a8"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=51d76ad904b15fcb"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751924850"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-ZeUggnT+G09Y+uC70Dbr1cr3Acc\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"customerId\": \"f039b850-2c72-4f48-a752-e0cfc11a18d5\",\n    \"name\": \"Marion VonRueden I\",\n    \"email\": \"Arne.DAmore@gmail.com\"\n}"
+						},
+						{
+							"id": "44602450-6a040117-5f30-40e5-bfae-870bdeb16fa7",
+							"name": "404 Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Customer not created",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 07 Jul 2025 21:46:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=b421f09ebed003a8"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=51d76ad904b15fcb"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "120"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "119"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1751924850"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-ZeUggnT+G09Y+uC70Dbr1cr3Acc\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"error\": {\n        \"name\": \"mockRequestNotFoundError\",\n        \"message\": \"Double check your method type and response name and try again. Learn more here: https://learning.postman.com/docs/design-apis/mock-apis/matching-algorithm/\",\n        \"header\": \"No matching response\"\n    }\n}"
+						},
+						{
+							"id": "44602450-acab493c-ef14-496f-ba88-598bb86f1f28",
+							"name": "Create a new customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Customer created",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 28 Jul 2025 18:01:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=d0d36b6fd99d10d4"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=f1144b43ad44f530"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "120"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "119"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1753725770"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"71-ApHEkQlaxa2sBdi8XG+y30btymw\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "114"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=CQlXusFqkZoJV6h2dE6V1R6HCeIuQJieaCiyZt.5COA-1753725710-1.0.1.1-wvz27qpwgykq5noUAO8FINZFQiR.sIUsDojapbYvaI0WLPK6TpkbgfwKrTeAXZHVavFGot0E6Bh3QNTK2YoPAamc0DOXJN34pE7P9D6Mm7M; path=/; expires=Mon, 28-Jul-25 18:31:50 GMT; domain=.pstmn.io; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "966648ba8f272d22-IAD"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"customerId\": \"b42fbee4-152b-4a8e-b74f-ea24a4fa9057\",\n    \"name\": \"Judy Cassin\",\n    \"email\": \"Elza25@gmail.com\"\n}"
+						},
+						{
+							"id": "44602450-ccc412c4-a32d-49cd-92d5-b2fe33169ef8",
+							"name": "Create a new customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-mock-response-name",
+										"value": "Customer created",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 28 Jul 2025 18:07:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "x-srv-trace",
+									"value": "v=1;t=d61951a674d15b2b"
+								},
+								{
+									"key": "x-srv-span",
+									"value": "v=1;s=5e644ac3704f7751"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-ratelimit-limit",
+									"value": "120"
+								},
+								{
+									"key": "x-ratelimit-remaining",
+									"value": "118"
+								},
+								{
+									"key": "x-ratelimit-reset",
+									"value": "1753726083"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"79-kRlChH1hUOQpkQNGDXE+Umm7LYw\""
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "152"
+								},
+								{
+									"key": "cf-cache-status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "__cf_bm=tiqg6LzrRc4durY.87ZxnTOoPxI.hsTOku8WlVh.FD0-1753726029-1.0.1.1-s0CGYIYhZbF.gVYrNMQtG.HWabnRnNXjToRTwNvOsdQsUGqmQQCopRzuRmSHzE1xnPVnzD48stSJb53p4bVm1btxf6N2uFMB0mQd6ho5iy8; path=/; expires=Mon, 28-Jul-25 18:37:09 GMT; domain=.pstmn.io; HttpOnly; Secure; SameSite=None"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "966650854b761f55-IAD"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"customerId\": \"0404e4c7-1cc9-4d63-9175-0491f2f109ca\",\n    \"name\": \"Sadie Wilderman\",\n    \"email\": \"Maryse76@hotmail.com\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new account",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "75bb5269-4be4-4622-a5e1-808fea9f378e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b380b21-1812-45ed-bd24-a2ce3abd31ef",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44602450-9184c880-7942-4b36-b36e-11f7e527aea9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "x-mock-response-name",
+								"value": "Customer created",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "### Create a New Customer\n\nThis endpoint allows you to create a new customer.\n\n#### Request Body\n\n- name (string, required): The name of the customer.\n    \n- email (string, required): The email address of the customer.\n    \n\n#### Response\n\nThe response will be a JSON object with the following schema:\n\n``` json\n{\n    \"customerId\": \"\",\n    \"name\": \"\",\n    \"email\": \"\"\n}\n\n ```\n\n#### Related Responses\n\n- Endpoint: /wallets\n    \n    - { \"customerId\": \"\", \"walletId\": \"\", \"account\": \"\", \"iban\": \"\", \"balance\": \"\"}\n        \n\n#### Status Code\n\n- 201: The customer was successfully created."
+					},
+					"response": [
+						{
+							"id": "44602450-8709f9a6-75c3-48d3-9d63-0b941c539796",
+							"name": "Customer created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-API-KEY",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customerssdfsdfsdf",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customerssdfsdfsdf"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n\t\"customerId\": \"{{$randomUUID}}\",\n\t\"name\": \"{{$body 'name'}}\",\n\t\"email\": \"{{$body 'email'}}\"\n}\n\n"
+						},
+						{
+							"id": "44602450-105a70d0-d2a0-45d0-b5a0-00c95ab5f9c8",
+							"name": "Customer created Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-API-KEY",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"{{$randomFullName}}\",\n\t\"email\": \"{{$randomEmail}}\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/customerssdfsdfsdf",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customerssdfsdfsdf"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"error\""
+						}
+					]
+				}
+			],
+			"id": "44602450-ba3d3ba0-8b0c-4bd0-afef-6695ff2db2d1",
+			"description": "Create a new customer"
+		},
+		{
+			"name": "wallet",
+			"item": [
+				{
+					"name": "Create a new wallet",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "21214f38-9e77-4322-880e-51712e150eea",
+								"exec": [
+									"// Get the customerUUID from collection variables",
+									"let customerId = pm.collectionVariables.get(\"customerId\");",
+									"console.log('customerId',customerId)",
+									"customerId = customerId ? customerId : `{{$randomUUID}}`;",
+									"// Get the current request body as a JSON object",
+									"let requestBody = pm.request.body.raw ? JSON.parse(pm.request.body.raw) : {};",
+									"",
+									"// Set the customerId in the request body",
+									"requestBody.customerId = customerId;",
+									"",
+									"// Update the request body with the new value",
+									"pm.request.body.raw = JSON.stringify(requestBody);",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "3c9ed2a8-7473-4170-835a-019a002dfc71",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44602450-4592c8ab-1eb1-4aa7-b6f9-9d3211f0f815",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "X-API-KEY",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"customerId\":\"\"}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/wallets",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallets"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "44602450-6f662477-4a15-4d3f-885f-113ec4b2a32c",
+							"name": "Wallet created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-API-KEY",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"customerId\": \"{{pm.collectionVariable.customerId}}\"\n}\n",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallets",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallets"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n\t\"walletId\": \"{{$randomUUID}}\",\n\t\"customerId\": \"{{$body 'customerId'}}\",\n\t\"balance\": {{$randomInt}}\n}"
+						}
+					]
+				},
+				{
+					"name": "Check Balance",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a83f253a-aa08-4f28-9408-97d0afd5f2ed",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "bdc7759c-5cc7-47d9-90dc-c649cf7714f0",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "44602450-e3ca00b0-0905-4824-bb64-9092e864c474",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "X-API-KEY",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/wallets/{{walletId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallets",
+								"{{walletId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "44602450-496cd946-9626-48cf-bb83-5e7a26327ec7",
+							"name": "Check Balance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "X-API-KEY",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/wallets/{{walletId}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"wallets",
+										"{{walletId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n\t\"walletId\": \"{{$pathSegments '1'}}\",\n    \"balance\": \"{{$randomInt}}\"\n}"
+						}
+					]
+				}
+			],
+			"id": "44602450-2938fa9b-f7ac-43d7-9e79-53f6c22f6da3"
+		},
+		{
+			"name": "Get wallet ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "506b5837-5285-422e-bb6d-0691e2af414d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"id": "44602450-0375d4f4-219f-4c55-b79e-68e1c10535d8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "X-API-KEY",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/wallets/{{walletId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"wallets",
+						"{{walletId}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "44602450-840de66e-e7b0-486e-8c3f-45b0a352b174",
+					"name": "Check Balance",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "X-API-KEY",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/wallets/{{walletId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"wallets",
+								"{{walletId}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n\t\"walletId\": \"{{$pathSegments '1'}}\",\n    \"balance\": \"{{$randomInt}}\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "83f4323a-2d5b-42da-86bb-977a691b7fe1",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b46ed2f9-572e-4e5c-b0b2-4f0ab862fec0",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "customerId",
+			"value": ""
+		},
+		{
+			"key": "walletId",
+			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://ab38c070-11c0-46e3-8bf7-0e4a2f65bba3.mock.pstmn.io"
+		}
+	]
+}
